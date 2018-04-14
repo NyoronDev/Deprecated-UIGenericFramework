@@ -1,4 +1,8 @@
-﻿using Unity;
+﻿using AC.Contracts;
+using AC.Contracts.Pages;
+using AC.SeleniumDriver;
+using AC.SeleniumDriver.Pages.Login;
+using Unity;
 
 namespace CL.Containers
 {
@@ -22,6 +26,12 @@ namespace CL.Containers
         {
             if (Container == null)
             {
+                var buildContainer = new UnityContainer();
+
+                buildContainer.RegisterType<ISetUp, SetUpDriver>();
+                buildContainer.RegisterType<ILoginPage, LoginPage>();
+
+                Container = buildContainer;
             }
         }
     }

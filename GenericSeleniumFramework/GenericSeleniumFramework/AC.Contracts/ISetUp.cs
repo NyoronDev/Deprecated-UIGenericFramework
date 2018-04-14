@@ -34,8 +34,9 @@ namespace AC.Contracts
         bool IsDriverNull();
 
         /// <summary>
-        /// Goes to main URL.
+        /// Goes to URL.
         /// </summary>
-        void GoToMainUrl();
+        /// <param name="url">The URL.</param>
+        void GoToUrl(string url);
     }
 }

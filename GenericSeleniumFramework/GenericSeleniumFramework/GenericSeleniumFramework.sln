@@ -23,6 +23,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AC.Contracts", "AC.Contract
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AC.SeleniumDriver", "AC.SeleniumDriver\AC.SeleniumDriver.csproj", "{EECEDE8A-4596-4A55-933E-EF8AE2AA8648}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "US.AcceptanceTests", "US.AcceptanceTests\US.AcceptanceTests.csproj", "{A3FD218C-65ED-4AB0-B046-7847CD5FF7FC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{EECEDE8A-4596-4A55-933E-EF8AE2AA8648}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EECEDE8A-4596-4A55-933E-EF8AE2AA8648}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EECEDE8A-4596-4A55-933E-EF8AE2AA8648}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3FD218C-65ED-4AB0-B046-7847CD5FF7FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3FD218C-65ED-4AB0-B046-7847CD5FF7FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3FD218C-65ED-4AB0-B046-7847CD5FF7FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3FD218C-65ED-4AB0-B046-7847CD5FF7FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -56,6 +62,7 @@ Global
 		{7108D904-5381-428D-80B4-A69CA1F5A101} = {4343822F-1A61-432E-9D7E-D6A317F8B4F3}
 		{ADB6EBED-278E-4A22-B884-B55DC80DE8BD} = {A0E488C0-AFF3-4DF8-8C27-101C55745040}
 		{EECEDE8A-4596-4A55-933E-EF8AE2AA8648} = {F1068E7D-B577-41E1-A81D-E7E218E64873}
+		{A3FD218C-65ED-4AB0-B046-7847CD5FF7FC} = {50699498-BC8A-4D2D-8345-5E8B2CD2E916}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {72B12F5E-6B01-471F-90C2-7AA93A6A7723}

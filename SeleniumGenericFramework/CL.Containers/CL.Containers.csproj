@@ -70,5 +70,15 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AC.Contracts\AC.Contracts.csproj">
+      <Project>{BE03BCAE-BB47-4A7A-AFB6-C9D23EDF1C81}</Project>
+      <Name>AC.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AC.SeleniumDriver\AC.SeleniumDriver.csproj">
+      <Project>{D04E56D2-BE33-4B52-82A0-1FE23B5C7801}</Project>
+      <Name>AC.SeleniumDriver</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

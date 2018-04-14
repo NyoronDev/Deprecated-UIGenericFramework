@@ -13,5 +13,11 @@ namespace AC.Contracts.Pages
         /// </summary>
         /// <param name="user">The user.</param>
         void LoginUser(UserLogin user);
+
+        /// <summary>
+        /// Gets the alert box message.
+        /// </summary>
+        /// <returns></returns>
+        string GetAlertBoxMessage();
     }
 }

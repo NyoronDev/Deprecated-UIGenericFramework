@@ -95,11 +95,11 @@ namespace AC.SeleniumDriver
         }
 
         /// <summary>
-        /// Goes to main URL.
+        /// Goes to URL.
         /// </summary>
-        public void GoToMainUrl()
+        public void GoToUrl(string url)
         {
-            webDriver.Navigate().GoToUrl(WebSite);
+            webDriver.Navigate().GoToUrl(url);
         }
 
         /// <summary>

@@ -13,7 +13,6 @@ namespace AC.SeleniumDriver
     public class SetUpDriver : ISetUp
     {
         private const string DriverPath = @"\binaries\";
-        private string WebSite => ConfigurationManager.AppSettings["WebSite"];
         private static IWebDriver webDriver;
 
         private enum WebBrowser
@@ -25,7 +24,7 @@ namespace AC.SeleniumDriver
         /// <summary>
         /// Closes the driver.
         /// </summary>
-        public static void CloseDriver()
+        public void CloseDriver()
         {
             webDriver?.Quit();
             webDriver?.Dispose();
@@ -39,24 +38,19 @@ namespace AC.SeleniumDriver
         /// <exception cref="System.Exception"></exception>
         public IWebDriver LaunchWebDriver()
         {
-            var appConfigValue = ConfigurationManager.AppSettings["WebBrowser"];
+            var webBrowser = WebBrowser.Chrome;
 
-            if (Enum.TryParse(appConfigValue, out WebBrowser webBrowser))
+            switch (webBrowser)
             {
-                switch (webBrowser)
-                {
-                    case WebBrowser.Chrome:
-                        return SetUpChromeWebDriver();
+                case WebBrowser.Chrome:
+                    return SetUpChromeWebDriver();
 
-                    case WebBrowser.IE11:
-                        return SetUpInternetExplorerWebDriver();
+                case WebBrowser.IE11:
+                    return SetUpInternetExplorerWebDriver();
 
-                    default:
-                        return SetUpChromeWebDriver();
-                }
+                default:
+                    return SetUpChromeWebDriver();
             }
-
-            throw new Exception($"The web browser {appConfigValue} is undefined");
         }
 
         /// <summary>
@@ -98,11 +92,11 @@ namespace AC.SeleniumDriver
         }
 
         /// <summary>
-        /// Goes to main URL.
+        /// Goes to URL.
         /// </summary>
-        public void GoToMainUrl()
+        public void GoToUrl(string url)
         {
-            webDriver.Navigate().GoToUrl(WebSite);
+            webDriver.Navigate().GoToUrl(url);
         }
 
         /// <summary>
@@ -164,11 +158,10 @@ namespace AC.SeleniumDriver
                 webDriver.Manage().Timeouts().AsynchronousJavaScript = TimeSpan.FromSeconds(15);
 
                 webDriver.Manage().Window.Maximize();
-                webDriver.Navigate().GoToUrl(this.WebSite);
 
                 return webDriver;
             }
-            catch
+            catch (Exception e)
             {
                 CloseDriver();
                 throw;
