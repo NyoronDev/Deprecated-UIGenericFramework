@@ -3,9 +3,9 @@ using AC.Contracts.Pages;
 using CL.Containers;
 using DF.Entities;
 using FluentAssertions;
+using Microsoft.Practices.Unity;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
-using Unity;
 
 namespace US.AcceptanceTests.Steps.Login
 {
@@ -19,10 +19,15 @@ namespace US.AcceptanceTests.Steps.Login
         private readonly ILoginPage loginPage;
         private readonly ISetUp setUp;
 
-        public LoginSteps()
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LoginSteps"/> class.
+        /// </summary>
+        /// <param name="setUp">The set up.</param>
+        /// <param name="loginPage">The login page.</param>
+        public LoginSteps(ISetUp setUp, ILoginPage loginPage)
         {
-            loginPage = AppContainer.Container.Resolve<ILoginPage>();
-            setUp = AppContainer.Container.Resolve<ISetUp>();
+            this.loginPage = loginPage;
+            this.setUp = setUp;
         }
 
         /// <summary>

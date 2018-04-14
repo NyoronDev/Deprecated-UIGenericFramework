@@ -1,5 +1,4 @@
-﻿using CL.Containers;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace US.AcceptanceTests.Steps
 {
@@ -8,13 +7,6 @@ namespace US.AcceptanceTests.Steps
     /// </summary>
     public class StepBase : TechTalk.SpecFlow.Steps
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="StepBase"/> class.
-        /// </summary>
-        public StepBase()
-        {
-            AppContainer.BuildWebContainer();
-        }
     }
 
     [TestClass]

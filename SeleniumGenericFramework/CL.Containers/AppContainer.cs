@@ -2,7 +2,7 @@
 using AC.Contracts.Pages;
 using AC.SeleniumDriver;
 using AC.SeleniumDriver.Pages.Login;
-using Unity;
+using Microsoft.Practices.Unity;
 
 namespace CL.Containers
 {
