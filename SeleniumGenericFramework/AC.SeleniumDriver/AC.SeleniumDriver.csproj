@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="SeleniumExtras.PageObjects, Version=3.11.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetSeleniumExtras.PageObjects.3.11.0\lib\net45\SeleniumExtras.PageObjects.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -43,12 +46,10 @@
     <Reference Include="WebDriver, Version=3.11.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Selenium.WebDriver.3.11.2\lib\net45\WebDriver.dll</HintPath>
     </Reference>
-    <Reference Include="WebDriver.Support, Version=3.11.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Selenium.Support.3.11.2\lib\net45\WebDriver.Support.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PageBase.cs" />
+    <Compile Include="Pages\Login\LoginPage.cs" />
     <Compile Include="SetUpDriver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -56,6 +57,10 @@
     <ProjectReference Include="..\AC.Contracts\AC.Contracts.csproj">
       <Project>{BE03BCAE-BB47-4A7A-AFB6-C9D23EDF1C81}</Project>
       <Name>AC.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DF.Entities\DF.Entities.csproj">
+      <Project>{21B5AC57-8984-43A3-A27F-4E6F45793563}</Project>
+      <Name>DF.Entities</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

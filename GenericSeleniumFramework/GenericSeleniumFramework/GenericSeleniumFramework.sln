@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2037
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1- Automation Core", "1- Automation Core", "{A00077B8-A08D-435E-89A9-50FD213B99FC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.1- Contracts", "1.1- Contracts", "{A0E488C0-AFF3-4DF8-8C27-101C55745040}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.2- Selenium Driver", "1.2- Selenium Driver", "{F1068E7D-B577-41E1-A81D-E7E218E64873}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2- User Stories", "2- User Stories", "{50699498-BC8A-4D2D-8345-5E8B2CD2E916}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3- Data Factory", "3- Data Factory", "{4343822F-1A61-432E-9D7E-D6A317F8B4F3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4- Cross Layer", "4- Cross Layer", "{A1EF0756-4FD2-4CAD-B788-249321AEC897}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CL.Containers", "CL.Containers\CL.Containers.csproj", "{EEAC15E1-DBE5-4939-A08E-26970ADD5F61}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DF.Entities", "DF.Entities\DF.Entities.csproj", "{7108D904-5381-428D-80B4-A69CA1F5A101}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AC.Contracts", "AC.Contracts\AC.Contracts.csproj", "{ADB6EBED-278E-4A22-B884-B55DC80DE8BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AC.SeleniumDriver", "AC.SeleniumDriver\AC.SeleniumDriver.csproj", "{EECEDE8A-4596-4A55-933E-EF8AE2AA8648}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EEAC15E1-DBE5-4939-A08E-26970ADD5F61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEAC15E1-DBE5-4939-A08E-26970ADD5F61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEAC15E1-DBE5-4939-A08E-26970ADD5F61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEAC15E1-DBE5-4939-A08E-26970ADD5F61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7108D904-5381-428D-80B4-A69CA1F5A101}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7108D904-5381-428D-80B4-A69CA1F5A101}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7108D904-5381-428D-80B4-A69CA1F5A101}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7108D904-5381-428D-80B4-A69CA1F5A101}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADB6EBED-278E-4A22-B884-B55DC80DE8BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADB6EBED-278E-4A22-B884-B55DC80DE8BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADB6EBED-278E-4A22-B884-B55DC80DE8BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADB6EBED-278E-4A22-B884-B55DC80DE8BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EECEDE8A-4596-4A55-933E-EF8AE2AA8648}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EECEDE8A-4596-4A55-933E-EF8AE2AA8648}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EECEDE8A-4596-4A55-933E-EF8AE2AA8648}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EECEDE8A-4596-4A55-933E-EF8AE2AA8648}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A0E488C0-AFF3-4DF8-8C27-101C55745040} = {A00077B8-A08D-435E-89A9-50FD213B99FC}
+		{F1068E7D-B577-41E1-A81D-E7E218E64873} = {A00077B8-A08D-435E-89A9-50FD213B99FC}
+		{EEAC15E1-DBE5-4939-A08E-26970ADD5F61} = {A1EF0756-4FD2-4CAD-B788-249321AEC897}
+		{7108D904-5381-428D-80B4-A69CA1F5A101} = {4343822F-1A61-432E-9D7E-D6A317F8B4F3}
+		{ADB6EBED-278E-4A22-B884-B55DC80DE8BD} = {A0E488C0-AFF3-4DF8-8C27-101C55745040}
+		{EECEDE8A-4596-4A55-933E-EF8AE2AA8648} = {F1068E7D-B577-41E1-A81D-E7E218E64873}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {72B12F5E-6B01-471F-90C2-7AA93A6A7723}
+	EndGlobalSection
+EndGlobal
