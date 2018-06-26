@@ -1,4 +1,5 @@
-﻿using AC.Contracts;
+﻿using System;
+using AC.Contracts;
 using AC.Contracts.Pages;
 using CL.Containers;
 using DF.Entities;
@@ -54,6 +55,26 @@ namespace US.AcceptanceTests.Steps.Login
         }
 
         /// <summary>
+        /// The user login to the web page.
+        /// </summary>
+        /// <param name="loginUser">The login user.</param>
+        [When(@"The user '(.*)' login to the web page")]
+        public void TheUserLoginToTheWebPage(string loginUser)
+        {
+            try
+            {
+                var user = GetLoginUser(loginUser);
+
+                loginPage.LoginUser(user);
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"User {loginUser} does not exist.", e);
+            }
+            
+        }
+
+        /// <summary>
         /// Thes the user cannot login and the alert appears.
         /// </summary>
         /// <param name="alertMessage">The alert message.</param>
@@ -79,7 +100,7 @@ namespace US.AcceptanceTests.Steps.Login
                     {
                         // Take a screenshot.
                         var screenshotPathFile = setUp.MakeScreenshot(ScenarioContext.Current.ScenarioInfo.Title);
-                        InitializeTestContext.Context.AddResultFile(screenshotPathFile);
+                        CurrentTestContext.AddResultFile(screenshotPathFile);
                     }
                 }
             }

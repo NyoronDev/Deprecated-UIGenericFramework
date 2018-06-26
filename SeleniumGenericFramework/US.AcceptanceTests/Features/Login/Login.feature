@@ -22,7 +22,5 @@ Scenario: This is a generic feature using a failed login
 @Reviewer:
 Scenario: This is another generic feature using a failed login
 	Given The user goes to the 'http://demo.guru99.com/v4/index.php' page
-	When The user tries to login with the following user
-		| UserId      | Password        |
-		| anotherUser | anotherPassword |
+	When The user 'anotherUser' login to the web page
 	Then The user cannot login and the 'User or Password is not valid' alert appears

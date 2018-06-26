@@ -1,4 +1,6 @@
-﻿namespace DF.Entities
+﻿using Newtonsoft.Json;
+
+namespace DF.Entities
 {
     /// <summary>
     /// The user login entity.
@@ -11,6 +13,7 @@
         /// <value>
         /// The user identifier.
         /// </value>
+        [JsonProperty(PropertyName = "userId")]
         public string UserId { get; set; }
 
         /// <summary>
@@ -19,6 +22,7 @@
         /// <value>
         /// The password.
         /// </value>
+        [JsonProperty(PropertyName = "password")]
         public string Password { get; set; }
     }
 }

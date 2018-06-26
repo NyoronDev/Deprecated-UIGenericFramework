@@ -141,16 +141,9 @@ this.ScenarioSetup(scenarioInfo);
 this.ScenarioSetup(scenarioInfo);
 #line 24
  testRunner.Given("The user goes to the \'http://demo.guru99.com/v4/index.php\' page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
-                        "UserId",
-                        "Password"});
-            table2.AddRow(new string[] {
-                        "anotherUser",
-                        "anotherPassword"});
 #line 25
- testRunner.When("The user tries to login with the following user", ((string)(null)), table2, "When ");
-#line 28
+ testRunner.When("The user \'anotherUser\' login to the web page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 26
  testRunner.Then("The user cannot login and the \'User or Password is not valid\' alert appears", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

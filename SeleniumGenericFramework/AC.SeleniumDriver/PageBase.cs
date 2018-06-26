@@ -49,17 +49,84 @@ namespace AC.SeleniumDriver
         }
 
         /// <summary>
-        /// Determines whether [is element enabled] [the specified element].
+        /// The click element.
         /// </summary>
-        /// <param name="element">The element.</param>
+        /// <param name="element">
+        /// The element.
+        /// </param>
+        protected void ClickElement(IWebElement element)
+        {
+            this.WaitUntil(1);
+
+            this.WaitUntilElementIsClickable(element);
+
+            element.Click();
+        }
+
+        /// <summary>
+        /// The send keys element.
+        /// </summary>
+        /// <param name="element">
+        /// The element.
+        /// </param>
+        /// <param name="keys">
+        /// The keys.
+        /// </param>
+        protected void SendKeysElement(IWebElement element, string keys)
+        {
+            Thread.Sleep(TimeSpan.FromMilliseconds(500));
+            this.WaitUntilElementIsClickable(element);
+
+            element.SendKeys(keys);
+        }
+
+        /// <summary>
+        /// The clear element.
+        /// </summary>
+        /// <param name="element">
+        /// The element.
+        /// </param>
+        protected void ClearElement(IWebElement element)
+        {
+            this.WaitUntil(1);
+            this.WaitUntilElementIsClickable(element);
+
+            element.Clear();
+        }
+
+        /// <summary>
+        /// The is element enabled.
+        /// </summary>
+        /// <param name="element">
+        /// The element.
+        /// </param>
         /// <returns>
-        ///   <c>true</c> if [is element enabled] [the specified element]; otherwise, <c>false</c>.
+        /// The <see cref="bool"/>.
         /// </returns>
         protected bool IsElementEnabled(IWebElement element)
         {
             this.WaitUntil(1);
 
-            return element.Displayed && element.Enabled;
+            try
+            {
+                return element.Displayed && element.Enabled;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// The wait until element.
+        /// </summary>
+        /// <param name="element">
+        /// The element.
+        /// </param>
+        private void WaitUntilElementIsClickable(IWebElement element)
+        {
+            this.webDriverWait = new WebDriverWait(this.webDriver, TimeSpan.FromSeconds(15));
+            this.webDriverWait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(element));
         }
     }
 }

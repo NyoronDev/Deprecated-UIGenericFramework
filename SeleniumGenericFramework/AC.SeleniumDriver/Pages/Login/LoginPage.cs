@@ -43,10 +43,10 @@ namespace AC.SeleniumDriver.Pages.Login
         public void LoginUser(UserLogin user)
         {
             this.WaitUntil(1);
-            userIdTextBox.SendKeys(user.UserId);
-            passwordTextBox.SendKeys(user.Password);
+            SendKeysElement(userIdTextBox, user.UserId);
+            SendKeysElement(passwordTextBox, user.Password);
 
-            loginButton.Click();
+            ClickElement(loginButton);
         }
 
         public string GetAlertBoxMessage()
