@@ -3,6 +3,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.IE;
 using System;
+using System.Configuration;
 using System.Globalization;
 using System.IO;
 using System.Reflection;
@@ -33,22 +34,27 @@ namespace AC.SeleniumDriver
         /// Launches the web driver.
         /// </summary>
         /// <returns>The <see cref="IWebDriver"/></returns>
-        /// <exception cref="System.Exception"></exception>
         public IWebDriver LaunchWebDriver()
         {
-            var webBrowser = WebBrowser.Chrome;
+            var webBrowserAppConfigValue = ConfigurationManager.AppSettings["WebBrowser"];
+            WebBrowser webBrowser;
 
-            switch (webBrowser)
+            if (Enum.TryParse(webBrowserAppConfigValue, out webBrowser))
             {
-                case WebBrowser.Chrome:
-                    return SetUpChromeWebDriver();
+                switch (webBrowser)
+                {
+                    case WebBrowser.Chrome:
+                        return SetUpChromeWebDriver();
 
-                case WebBrowser.IE11:
-                    return SetUpInternetExplorerWebDriver();
+                    case WebBrowser.IE11:
+                        return SetUpInternetExplorerWebDriver();
 
-                default:
-                    return SetUpChromeWebDriver();
+                    default:
+                        return SetUpChromeWebDriver();
+                }
             }
+
+            throw new Exception($"The web browser {webBrowserAppConfigValue} is undefined");
         }
 
         /// <summary>
@@ -150,9 +156,9 @@ namespace AC.SeleniumDriver
                 var internetExplorerOptions = new InternetExplorerOptions();
                 internetExplorerOptions.IntroduceInstabilityByIgnoringProtectedModeSettings = true;
 
-                webDriver = new InternetExplorerDriver(InternetExplorerDriverService.CreateDefaultService(internetExplorerFullPath), internetExplorerOptions, TimeSpan.FromSeconds(15));
-                webDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
-                webDriver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(15);
+                webDriver = new InternetExplorerDriver(InternetExplorerDriverService.CreateDefaultService(internetExplorerFullPath), internetExplorerOptions, TimeSpan.FromSeconds(60));
+                webDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+                webDriver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(60);
                 webDriver.Manage().Timeouts().AsynchronousJavaScript = TimeSpan.FromSeconds(15);
 
                 webDriver.Manage().Window.Maximize();

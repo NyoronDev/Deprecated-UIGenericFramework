@@ -38,7 +38,6 @@ namespace US.AcceptanceTests.Steps.Login
         [Given(@"The user goes to the '(.*)' page")]
         public void TheUserGoesToThePage(string page)
         {
-            ScenarioContext.Current.Add("url", page);
             setUp.GoToUrl(page);
         }
 
