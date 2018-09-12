@@ -3,7 +3,6 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.IE;
 using System;
-using System.Configuration;
 using System.Globalization;
 using System.IO;
 using System.Reflection;
@@ -12,7 +11,6 @@ namespace AC.SeleniumDriver
 {
     public class SetUpDriver : ISetUp
     {
-        private const string DriverPath = @"\binaries\";
         private static IWebDriver webDriver;
 
         private enum WebBrowser
@@ -112,7 +110,7 @@ namespace AC.SeleniumDriver
                     return webDriver;
                 }
 
-                var chromeFullPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + DriverPath;
+                var chromeFullPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
                 var chromeOptions = new ChromeOptions();
                 chromeOptions.AddArgument("--start-maximized");
                 chromeOptions.AddArguments("disable-infobars");
@@ -147,7 +145,7 @@ namespace AC.SeleniumDriver
                     return webDriver;
                 }
 
-                var internetExplorerFullPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + DriverPath;
+                var internetExplorerFullPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
 
                 var internetExplorerOptions = new InternetExplorerOptions();
                 internetExplorerOptions.IntroduceInstabilityByIgnoringProtectedModeSettings = true;
@@ -161,7 +159,7 @@ namespace AC.SeleniumDriver
 
                 return webDriver;
             }
-            catch (Exception e)
+            catch
             {
                 CloseDriver();
                 throw;
