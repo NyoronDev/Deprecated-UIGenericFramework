@@ -46,7 +46,9 @@
   <ItemGroup>
     <Compile Include="IPageBase.cs" />
     <Compile Include="ISetUp.cs" />
+    <Compile Include="Pages\IAddTaskPage.cs" />
     <Compile Include="Pages\ILoginPage.cs" />
+    <Compile Include="Pages\IMainPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

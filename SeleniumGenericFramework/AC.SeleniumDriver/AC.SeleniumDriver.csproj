@@ -53,7 +53,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PageBase.cs" />
+    <Compile Include="Pages\AddTask\AddTaskPage.cs" />
     <Compile Include="Pages\Login\LoginPage.cs" />
+    <Compile Include="Pages\Main\MainPage.cs" />
     <Compile Include="SetUpDriver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -70,5 +72,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

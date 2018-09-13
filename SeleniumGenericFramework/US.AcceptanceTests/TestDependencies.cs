@@ -15,7 +15,7 @@ namespace US.AcceptanceTests
         /// <summary>
         /// Creates the container.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>The <see cref="IUnityContainer"/></returns>
         [ScenarioDependencies]
         public static IUnityContainer CreateContainer()
         {

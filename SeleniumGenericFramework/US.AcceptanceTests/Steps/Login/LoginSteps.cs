@@ -84,38 +84,5 @@ namespace US.AcceptanceTests.Steps.Login
 
             realMessage.Should().Be(alertMessage);
         }
-
-        /// <summary>
-        /// The after scenario.
-        /// </summary>
-        [AfterScenario]
-        public void AfterScenario()
-        {
-            try
-            {
-                if (!setUp.IsDriverNull())
-                {
-                    if (ScenarioContext.Current.TestError != null)
-                    {
-                        // Take a screenshot.
-                        var screenshotPathFile = setUp.MakeScreenshot(ScenarioContext.Current.ScenarioInfo.Title);
-                        CurrentTestContext.AddResultFile(screenshotPathFile);
-                    }
-                }
-            }
-            catch
-            {
-                setUp.CloseDriver();
-            }
-        }
-
-        /// <summary>
-        /// The clean test run.
-        /// </summary>
-        [AfterTestRun]
-        public static void CleanTestRun()
-        {
-            AppContainer.Container.Resolve<ISetUp>().CloseDriver();
-        }
     }
 }

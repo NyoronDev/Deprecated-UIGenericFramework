@@ -87,8 +87,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Login.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\Main\Main.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Main.feature</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Steps\CreateNewItem\CreateNewItemSteps.cs" />
     <Compile Include="Steps\Login\LoginSteps.cs" />
+    <Compile Include="Steps\Main\MainPageSteps.cs" />
     <Compile Include="Steps\StepBase.cs" />
     <Compile Include="TestDependencies.cs" />
   </ItemGroup>
@@ -97,6 +104,10 @@
     <None Include="Features\Login\Login.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Login.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Main\Main.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Main.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
     <None Include="TestData\Users.json">
@@ -122,6 +133,7 @@
       <Name>DF.Entities</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
