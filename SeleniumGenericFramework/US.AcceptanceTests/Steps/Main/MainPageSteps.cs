@@ -31,7 +31,18 @@ namespace US.AcceptanceTests.Steps.Main
         [Given(@"The user goes to the main page")]
         public void TheUserGoesToTheMainPage()
         {
-            this.setUpDriver.GoToUrl("https://todoauto.azurewebsites.net");
+            string url;
+            try
+            {
+                url = this.WebSiteUrl;
+            }
+            catch
+            {
+                // We need to add the config.runsettings -> Visual Studio -> Test -> Test Settings -> Select Test Settings File
+                url = "https://todoauto.azurewebsites.net";
+            }
+
+            this.setUpDriver.GoToUrl(url);
         }
 
         [Given(@"The user goes to create new item")]

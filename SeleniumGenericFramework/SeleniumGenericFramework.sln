@@ -25,6 +25,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AC.SeleniumDriver", "AC.Sel
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "US.AcceptanceTests", "US.AcceptanceTests\US.AcceptanceTests.csproj", "{E4A202F9-D081-4E7A-B8C3-60047FBE104B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RunSettings", "RunSettings", "{5B3D7803-EA34-4451-8C82-F5957C853F3E}"
+	ProjectSection(SolutionItems) = preProject
+		config.runsettings = config.runsettings
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

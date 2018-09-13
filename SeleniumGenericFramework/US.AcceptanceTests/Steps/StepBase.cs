@@ -25,6 +25,8 @@ namespace US.AcceptanceTests.Steps
 
         public TestContext CurrentTestContext => context;
 
+        public string WebSiteUrl => this.CurrentTestContext?.Properties["WebSiteURL"].ToString();
+
         /// <summary>
         /// Gets the to do items.
         /// </summary>
