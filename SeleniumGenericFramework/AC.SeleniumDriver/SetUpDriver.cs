@@ -1,7 +1,6 @@
 ﻿using AC.Contracts;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.IE;
 using System;
 using System.Configuration;
 using System.Globalization;
@@ -16,8 +15,7 @@ namespace AC.SeleniumDriver
 
         private enum WebBrowser
         {
-            Chrome,
-            IE11
+            Chrome
         }
 
         /// <summary>
@@ -46,9 +44,6 @@ namespace AC.SeleniumDriver
                     case WebBrowser.Chrome:
                         return SetUpChromeWebDriver();
 
-                    case WebBrowser.IE11:
-                        return SetUpInternetExplorerWebDriver();
-
                     default:
                         return SetUpChromeWebDriver();
                 }
@@ -65,7 +60,7 @@ namespace AC.SeleniumDriver
         public string MakeScreenshot(string scenario)
         {
             var binDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\screenshot";
-            CreateScreenShotFolder(binDirectory);
+            this.CreateScreenshotFolder(binDirectory);
 
             var screenshot = ((ITakesScreenshot)webDriver).GetScreenshot();
             var screenshotName = $"{DateTime.UtcNow.ToString("d-M-yyyy HH-mm-ss", CultureInfo.InvariantCulture)}_{scenario}.jpeg";
@@ -98,6 +93,7 @@ namespace AC.SeleniumDriver
         /// <summary>
         /// Goes to URL.
         /// </summary>
+        /// <param name="url">The URL.</param>
         public void GoToUrl(string url)
         {
             webDriver.Navigate().GoToUrl(url);
@@ -139,44 +135,10 @@ namespace AC.SeleniumDriver
         }
 
         /// <summary>
-        /// Sets up internet explorer web driver.
-        /// </summary>
-        /// <returns>The <see cref="IWebDriver"/>.</returns>
-        private IWebDriver SetUpInternetExplorerWebDriver()
-        {
-            try
-            {
-                if (webDriver != null)
-                {
-                    return webDriver;
-                }
-
-                var internetExplorerFullPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-
-                var internetExplorerOptions = new InternetExplorerOptions();
-                internetExplorerOptions.IntroduceInstabilityByIgnoringProtectedModeSettings = true;
-
-                webDriver = new InternetExplorerDriver(InternetExplorerDriverService.CreateDefaultService(internetExplorerFullPath), internetExplorerOptions, TimeSpan.FromSeconds(60));
-                webDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-                webDriver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(60);
-                webDriver.Manage().Timeouts().AsynchronousJavaScript = TimeSpan.FromSeconds(15);
-
-                webDriver.Manage().Window.Maximize();
-
-                return webDriver;
-            }
-            catch
-            {
-                CloseDriver();
-                throw;
-            }
-        }
-
-        /// <summary>
         /// Creates the screen shot folder.
         /// </summary>
         /// <param name="path">The path.</param>
-        private void CreateScreenShotFolder(string path)
+        private void CreateScreenshotFolder(string path)
         {
             if (!Directory.Exists(path))
             {

@@ -2,7 +2,6 @@
 using AC.Contracts.Pages;
 using AC.SeleniumDriver;
 using AC.SeleniumDriver.Pages.AddTask;
-using AC.SeleniumDriver.Pages.Login;
 using AC.SeleniumDriver.Pages.Main;
 using Microsoft.Practices.Unity;
 
@@ -31,7 +30,6 @@ namespace CL.Containers
                 var buildContainer = new UnityContainer();
 
                 buildContainer.RegisterType<ISetUp, SetUpDriver>();
-                buildContainer.RegisterType<ILoginPage, LoginPage>();
                 buildContainer.RegisterType<IMainPage, MainPage>();
                 buildContainer.RegisterType<IAddTaskPage, AddTaskPage>();
 
