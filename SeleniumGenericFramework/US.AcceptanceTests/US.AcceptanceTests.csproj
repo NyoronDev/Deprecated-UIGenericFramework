@@ -110,6 +110,9 @@
       <LastGenOutput>Main.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
+    <None Include="TestData\TodoItems.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="TestData\Users.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

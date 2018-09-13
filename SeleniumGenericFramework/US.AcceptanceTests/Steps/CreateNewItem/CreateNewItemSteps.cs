@@ -1,4 +1,5 @@
-﻿using AC.Contracts.Pages;
+﻿using System;
+using AC.Contracts.Pages;
 using DF.Entities;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
@@ -43,6 +44,21 @@ namespace US.AcceptanceTests.Steps.CreateNewItem
             {
                 this.mainPage.GoToCreateNewTask();
                 this.addTaskPage.CreateTask(task);
+            }
+        }
+
+        [When(@"The user creates the task '(.*)'")]
+        public void TheUserCreatesTheTask(string title)
+        {
+            try
+            {
+                var task = this.GetTodoItem(title);
+
+                this.addTaskPage.CreateTask(task);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"The title {title} does not found at the json file", ex);
             }
         }
     }
