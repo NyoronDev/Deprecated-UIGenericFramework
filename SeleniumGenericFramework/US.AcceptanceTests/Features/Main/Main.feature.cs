@@ -86,14 +86,22 @@ namespace US.AcceptanceTests.Features.Main
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Add Task View - Check the values from the task")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Main Features - How to create different tasks")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.OwnerAttribute("NyoronDev")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Story:MainFeatures")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Guid:0A707F62-1C9D-4C14-B25A-005262136597")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("CreationDate:2018-09-14")]
         public virtual void AddTaskView_CheckTheValuesFromTheTask()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add Task View - Check the values from the task", ((string[])(null)));
-#line 6
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add Task View - Check the values from the task", new string[] {
+                        "Story:MainFeatures",
+                        "Owner:NyoronDev",
+                        "Guid:0A707F62-1C9D-4C14-B25A-005262136597",
+                        "CreationDate:2018-09-14"});
+#line 10
 this.ScenarioSetup(scenarioInfo);
-#line 7
+#line 11
     testRunner.Given("The user goes to the main page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 8
+#line 12
     testRunner.And("The user goes to create new item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
@@ -104,7 +112,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Title 1",
                         "This is a content 1",
                         "Red"});
-#line 9
+#line 13
     testRunner.When("The user creates a new task with the following properties:", ((string)(null)), table1, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -115,7 +123,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Title 1",
                         "This is a content 1",
                         "red"});
-#line 12
+#line 16
     testRunner.Then("The testee display the following items:", ((string)(null)), table2, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -124,12 +132,20 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Add Task View - Check the values from different tasks")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Main Features - How to create different tasks")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.OwnerAttribute("NyoronDev")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Story:MainFeatures")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Guid:24AFA554-B7DB-4B16-ACA8-B7C7E8A754D0")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("CreationDate:2018-09-14")]
         public virtual void AddTaskView_CheckTheValuesFromDifferentTasks()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add Task View - Check the values from different tasks", ((string[])(null)));
-#line 16
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add Task View - Check the values from different tasks", new string[] {
+                        "Story:MainFeatures",
+                        "Owner:NyoronDev",
+                        "Guid:24AFA554-B7DB-4B16-ACA8-B7C7E8A754D0",
+                        "CreationDate:2018-09-14"});
+#line 24
 this.ScenarioSetup(scenarioInfo);
-#line 17
+#line 25
     testRunner.Given("The user goes to the main page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
@@ -148,7 +164,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Title 3",
                         "This is a content 3",
                         "Yellow"});
-#line 18
+#line 26
     testRunner.When("The user creates a group of task with the following properties:", ((string)(null)), table3, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
@@ -167,7 +183,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Title 3",
                         "This is a content 3",
                         "yellow"});
-#line 23
+#line 31
     testRunner.Then("The testee display the following items:", ((string)(null)), table4, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -176,16 +192,24 @@ this.ScenarioSetup(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Add Task View - Check the values from the task added from the json file")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Main Features - How to create different tasks")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.OwnerAttribute("NyoronDev")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Story:MainFeatures")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Guid:0E257D2C-AAD1-4DBC-B831-0957928010D1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("CreationDate:2018-09-14")]
         public virtual void AddTaskView_CheckTheValuesFromTheTaskAddedFromTheJsonFile()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add Task View - Check the values from the task added from the json file", ((string[])(null)));
-#line 29
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add Task View - Check the values from the task added from the json file", new string[] {
+                        "Story:MainFeatures",
+                        "Owner:NyoronDev",
+                        "Guid:0E257D2C-AAD1-4DBC-B831-0957928010D1",
+                        "CreationDate:2018-09-14"});
+#line 41
 this.ScenarioSetup(scenarioInfo);
-#line 30
+#line 42
     testRunner.Given("The user goes to the main page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 31
+#line 43
     testRunner.And("The user goes to create new item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 32
+#line 44
     testRunner.When("The user creates the task \'Json Task\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
@@ -196,7 +220,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Json Task",
                         "This is a content 1",
                         "red"});
-#line 33
+#line 45
     testRunner.Then("The testee display the following items:", ((string)(null)), table5, "Then ");
 #line hidden
             this.ScenarioCleanup();
