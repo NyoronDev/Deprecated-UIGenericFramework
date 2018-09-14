@@ -6,7 +6,6 @@ The idea of this project is to separate the different layers so that they can be
 Include an example on a real web to see how the architecture works.
 
 ## Requirements
-asdf
 - [Visual Studio](https://visualstudio.microsoft.com/downloads/)
 - Visual Studio Extension "Specflow for Visual Studio" (Tools -> Extensions and Updates -> Online -> Specflow)
 - [.Net Framework 4.7](https://www.microsoft.com/en-us/download/details.aspx?id=55168)
