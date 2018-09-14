@@ -1,8 +1,8 @@
-﻿using AC.Contracts;
+﻿using System;
+using System.Threading;
+using AC.Contracts;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using System;
-using System.Threading;
 
 namespace AC.SeleniumDriver
 {

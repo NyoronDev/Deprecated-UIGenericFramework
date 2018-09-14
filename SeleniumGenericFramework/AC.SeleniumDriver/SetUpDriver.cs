@@ -1,11 +1,13 @@
-﻿using AC.Contracts;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using System;
+﻿using System;
 using System.Configuration;
 using System.Globalization;
 using System.IO;
 using System.Reflection;
+using AC.Contracts;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Appium.Android;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Remote;
 
 namespace AC.SeleniumDriver
 {
@@ -15,7 +17,8 @@ namespace AC.SeleniumDriver
 
         private enum WebBrowser
         {
-            Chrome
+            Chrome,
+            Android
         }
 
         /// <summary>
@@ -42,10 +45,13 @@ namespace AC.SeleniumDriver
                 switch (webBrowser)
                 {
                     case WebBrowser.Chrome:
-                        return SetUpChromeWebDriver();
+                        return this.SetUpChromeWebDriver();
+
+                    case WebBrowser.Android:
+                        return this.SetUpAndroidWebDriver();
 
                     default:
-                        return SetUpChromeWebDriver();
+                        return this.SetUpChromeWebDriver();
                 }
             }
 
@@ -129,7 +135,46 @@ namespace AC.SeleniumDriver
             }
             catch
             {
-                CloseDriver();
+                this.CloseDriver();
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// Sets up android web driver.
+        /// </summary>
+        /// <returns>
+        /// The <see cref="IWebDriver"/>.
+        /// </returns>
+        private IWebDriver SetUpAndroidWebDriver()
+        {
+            try
+            {
+                if (webDriver != null)
+                {
+                    return webDriver;
+                }
+
+                var capabilities = new DesiredCapabilities();
+                capabilities.SetCapability("deviceName", "generic_x86");
+                capabilities.SetCapability("platformVersion", "7.0");
+                capabilities.SetCapability("platformName", "Android");
+                capabilities.SetCapability("fastReset", "True");
+                capabilities.SetCapability("browserName", "Chrome");
+                capabilities.SetCapability("unicodeKeyboard", true);
+                capabilities.SetCapability("resetKeyboard", true);
+
+
+                webDriver = new AndroidDriver<AndroidElement>(new Uri("http://127.0.0.1:4723/wd/hub"), capabilities, TimeSpan.FromSeconds(120));
+                webDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+                webDriver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(60);
+                webDriver.Manage().Timeouts().AsynchronousJavaScript = TimeSpan.FromSeconds(15);
+
+                return webDriver;
+            }
+            catch (Exception ex)
+            {
+                this.CloseDriver();
                 throw;
             }
         }
