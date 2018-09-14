@@ -6,10 +6,11 @@ The idea of this project is to separate the different layers so that they can be
 Include an example on a real web to see how the architecture works.
 
 ## Requirements
-- [Visual Studio] (https://visualstudio.microsoft.com/downloads/)
+asdf
+- [Visual Studio](https://visualstudio.microsoft.com/downloads/)
 - Visual Studio Extension "Specflow for Visual Studio" (Tools -> Extensions and Updates -> Online -> Specflow)
-- [.Net Framework 4.7] (https://www.microsoft.com/en-us/download/details.aspx?id=55168)
-- [Appium Server] (http://appium.io/) (If you need run tests with mobile platforms)
+- [.Net Framework 4.7](https://www.microsoft.com/en-us/download/details.aspx?id=55168)
+- [Appium Server](http://appium.io/) (If you need run tests with mobile platforms)
 
 ## QuickStart
 1. Fork the project and open it with Visual Studio
