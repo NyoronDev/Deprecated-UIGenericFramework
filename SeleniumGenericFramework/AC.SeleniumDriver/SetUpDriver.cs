@@ -164,7 +164,6 @@ namespace AC.SeleniumDriver
                 capabilities.SetCapability("unicodeKeyboard", true);
                 capabilities.SetCapability("resetKeyboard", true);
 
-
                 webDriver = new AndroidDriver<AndroidElement>(new Uri("http://127.0.0.1:4723/wd/hub"), capabilities, TimeSpan.FromSeconds(120));
                 webDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
                 webDriver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(60);
