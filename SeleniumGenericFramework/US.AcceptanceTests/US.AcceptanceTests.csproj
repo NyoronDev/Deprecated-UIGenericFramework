@@ -55,6 +55,15 @@
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'AndroidNative|AnyCPU'">
+    <OutputPath>bin\AndroidNative\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="FluentAssertions, Version=5.2.0.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
       <HintPath>..\packages\FluentAssertions.5.2.0\lib\net47\FluentAssertions.dll</HintPath>
@@ -112,11 +121,15 @@
     <Compile Include="TestDependencies.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.AndroidNative.config">
+      <DependentUpon>App.config</DependentUpon>
+    </None>
     <None Include="App.Chrome.config">
       <DependentUpon>App.config</DependentUpon>
     </None>
     <None Include="App.ChromeAndroid.config">
       <DependentUpon>App.config</DependentUpon>
+      <SubType>Designer</SubType>
     </None>
     <None Include="App.config" />
     <None Include="App.Debug.config">
@@ -124,6 +137,9 @@
     </None>
     <None Include="App.Release.config">
       <DependentUpon>App.config</DependentUpon>
+    </None>
+    <None Include="binaries\mylist.apk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Features\Main\Main.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

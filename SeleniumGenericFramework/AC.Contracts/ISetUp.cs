@@ -11,7 +11,7 @@ namespace AC.Contracts
         /// Launches the web driver.
         /// </summary>
         /// <returns></returns>
-        IWebDriver LaunchWebDriver();
+        IWebDriver LaunchDriver();
 
         /// <summary>
         /// Makes the screenshot.

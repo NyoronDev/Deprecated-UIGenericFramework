@@ -13,7 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4- Cross Layer", "4- Cross 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.1- Contracts", "1.1- Contracts", "{F8139831-588B-47F2-9072-32AD3E8F0B64}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.2- Selenium Driver", "1.2- Selenium Driver", "{1E115FA9-3F8A-47FE-92EF-EE231DB910CC}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.2- WebBrowser Driver", "1.2- WebBrowser Driver", "{1E115FA9-3F8A-47FE-92EF-EE231DB910CC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CL.Containers", "CL.Containers\CL.Containers.csproj", "{DB87744D-2B4A-4EEF-A6B4-E3C823A1222F}"
 EndProject
@@ -30,14 +30,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RunSettings", "RunSettings"
 		config.runsettings = config.runsettings
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.3 - AndroidNative Driver", "1.3 - AndroidNative Driver", "{0F3012AA-8283-4A10-8BE3-50F80FF39184}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AC.AndroidNativeDriver", "AC.AndroidNativeDriver\AC.AndroidNativeDriver.csproj", "{1D5FAEA8-01D2-44F7-B342-E10187C200CC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		AndroidNative|Any CPU = AndroidNative|Any CPU
 		Chrome|Any CPU = Chrome|Any CPU
 		ChromeAndroid|Any CPU = ChromeAndroid|Any CPU
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DB87744D-2B4A-4EEF-A6B4-E3C823A1222F}.AndroidNative|Any CPU.ActiveCfg = AndroidNative|Any CPU
+		{DB87744D-2B4A-4EEF-A6B4-E3C823A1222F}.AndroidNative|Any CPU.Build.0 = AndroidNative|Any CPU
 		{DB87744D-2B4A-4EEF-A6B4-E3C823A1222F}.Chrome|Any CPU.ActiveCfg = Chrome|Any CPU
 		{DB87744D-2B4A-4EEF-A6B4-E3C823A1222F}.Chrome|Any CPU.Build.0 = Chrome|Any CPU
 		{DB87744D-2B4A-4EEF-A6B4-E3C823A1222F}.ChromeAndroid|Any CPU.ActiveCfg = ChromeAndroid|Any CPU
@@ -46,6 +53,8 @@ Global
 		{DB87744D-2B4A-4EEF-A6B4-E3C823A1222F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB87744D-2B4A-4EEF-A6B4-E3C823A1222F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB87744D-2B4A-4EEF-A6B4-E3C823A1222F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21B5AC57-8984-43A3-A27F-4E6F45793563}.AndroidNative|Any CPU.ActiveCfg = AndroidNative|Any CPU
+		{21B5AC57-8984-43A3-A27F-4E6F45793563}.AndroidNative|Any CPU.Build.0 = AndroidNative|Any CPU
 		{21B5AC57-8984-43A3-A27F-4E6F45793563}.Chrome|Any CPU.ActiveCfg = Chrome|Any CPU
 		{21B5AC57-8984-43A3-A27F-4E6F45793563}.Chrome|Any CPU.Build.0 = Chrome|Any CPU
 		{21B5AC57-8984-43A3-A27F-4E6F45793563}.ChromeAndroid|Any CPU.ActiveCfg = ChromeAndroid|Any CPU
@@ -54,6 +63,8 @@ Global
 		{21B5AC57-8984-43A3-A27F-4E6F45793563}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21B5AC57-8984-43A3-A27F-4E6F45793563}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21B5AC57-8984-43A3-A27F-4E6F45793563}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE03BCAE-BB47-4A7A-AFB6-C9D23EDF1C81}.AndroidNative|Any CPU.ActiveCfg = AndroidNative|Any CPU
+		{BE03BCAE-BB47-4A7A-AFB6-C9D23EDF1C81}.AndroidNative|Any CPU.Build.0 = AndroidNative|Any CPU
 		{BE03BCAE-BB47-4A7A-AFB6-C9D23EDF1C81}.Chrome|Any CPU.ActiveCfg = Chrome|Any CPU
 		{BE03BCAE-BB47-4A7A-AFB6-C9D23EDF1C81}.Chrome|Any CPU.Build.0 = Chrome|Any CPU
 		{BE03BCAE-BB47-4A7A-AFB6-C9D23EDF1C81}.ChromeAndroid|Any CPU.ActiveCfg = ChromeAndroid|Any CPU
@@ -62,6 +73,8 @@ Global
 		{BE03BCAE-BB47-4A7A-AFB6-C9D23EDF1C81}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE03BCAE-BB47-4A7A-AFB6-C9D23EDF1C81}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE03BCAE-BB47-4A7A-AFB6-C9D23EDF1C81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D04E56D2-BE33-4B52-82A0-1FE23B5C7801}.AndroidNative|Any CPU.ActiveCfg = AndroidNative|Any CPU
+		{D04E56D2-BE33-4B52-82A0-1FE23B5C7801}.AndroidNative|Any CPU.Build.0 = AndroidNative|Any CPU
 		{D04E56D2-BE33-4B52-82A0-1FE23B5C7801}.Chrome|Any CPU.ActiveCfg = Chrome|Any CPU
 		{D04E56D2-BE33-4B52-82A0-1FE23B5C7801}.Chrome|Any CPU.Build.0 = Chrome|Any CPU
 		{D04E56D2-BE33-4B52-82A0-1FE23B5C7801}.ChromeAndroid|Any CPU.ActiveCfg = ChromeAndroid|Any CPU
@@ -70,6 +83,8 @@ Global
 		{D04E56D2-BE33-4B52-82A0-1FE23B5C7801}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D04E56D2-BE33-4B52-82A0-1FE23B5C7801}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D04E56D2-BE33-4B52-82A0-1FE23B5C7801}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4A202F9-D081-4E7A-B8C3-60047FBE104B}.AndroidNative|Any CPU.ActiveCfg = AndroidNative|Any CPU
+		{E4A202F9-D081-4E7A-B8C3-60047FBE104B}.AndroidNative|Any CPU.Build.0 = AndroidNative|Any CPU
 		{E4A202F9-D081-4E7A-B8C3-60047FBE104B}.Chrome|Any CPU.ActiveCfg = Chrome|Any CPU
 		{E4A202F9-D081-4E7A-B8C3-60047FBE104B}.Chrome|Any CPU.Build.0 = Chrome|Any CPU
 		{E4A202F9-D081-4E7A-B8C3-60047FBE104B}.ChromeAndroid|Any CPU.ActiveCfg = ChromeAndroid|Any CPU
@@ -78,6 +93,16 @@ Global
 		{E4A202F9-D081-4E7A-B8C3-60047FBE104B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E4A202F9-D081-4E7A-B8C3-60047FBE104B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E4A202F9-D081-4E7A-B8C3-60047FBE104B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D5FAEA8-01D2-44F7-B342-E10187C200CC}.AndroidNative|Any CPU.ActiveCfg = AndroidNative|Any CPU
+		{1D5FAEA8-01D2-44F7-B342-E10187C200CC}.AndroidNative|Any CPU.Build.0 = AndroidNative|Any CPU
+		{1D5FAEA8-01D2-44F7-B342-E10187C200CC}.Chrome|Any CPU.ActiveCfg = Release|Any CPU
+		{1D5FAEA8-01D2-44F7-B342-E10187C200CC}.Chrome|Any CPU.Build.0 = Release|Any CPU
+		{1D5FAEA8-01D2-44F7-B342-E10187C200CC}.ChromeAndroid|Any CPU.ActiveCfg = Release|Any CPU
+		{1D5FAEA8-01D2-44F7-B342-E10187C200CC}.ChromeAndroid|Any CPU.Build.0 = Release|Any CPU
+		{1D5FAEA8-01D2-44F7-B342-E10187C200CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D5FAEA8-01D2-44F7-B342-E10187C200CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D5FAEA8-01D2-44F7-B342-E10187C200CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D5FAEA8-01D2-44F7-B342-E10187C200CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -90,6 +115,8 @@ Global
 		{BE03BCAE-BB47-4A7A-AFB6-C9D23EDF1C81} = {F8139831-588B-47F2-9072-32AD3E8F0B64}
 		{D04E56D2-BE33-4B52-82A0-1FE23B5C7801} = {1E115FA9-3F8A-47FE-92EF-EE231DB910CC}
 		{E4A202F9-D081-4E7A-B8C3-60047FBE104B} = {FCF4ABA4-6056-4ECB-8E9D-0E531E28E8A7}
+		{0F3012AA-8283-4A10-8BE3-50F80FF39184} = {2EDF6468-D1E3-49F1-94B9-5FC7750E086B}
+		{1D5FAEA8-01D2-44F7-B342-E10187C200CC} = {0F3012AA-8283-4A10-8BE3-50F80FF39184}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {89A7D4D0-E39D-4A65-9247-39955848EEE8}

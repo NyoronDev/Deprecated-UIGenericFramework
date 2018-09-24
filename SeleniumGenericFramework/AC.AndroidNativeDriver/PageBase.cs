@@ -1,42 +1,27 @@
-﻿using System;
-using System.Threading;
-using AC.Contracts;
+﻿using AC.Contracts;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Appium.Android;
 using OpenQA.Selenium.Support.UI;
+using System;
+using System.Threading;
 
-namespace AC.SeleniumDriver
+namespace AC.AndroidNativeDriver
 {
     /// <summary>
-    /// The page base class.
+    /// The page base.
     /// </summary>
     /// <seealso cref="AC.Contracts.IPageBase" />
     public class PageBase : IPageBase
     {
-        protected IWebDriver webDriver;
+        protected AndroidDriver<AndroidElement> androidDriver;
         protected WebDriverWait webDriverWait;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="PageBase"/> class.
         /// </summary>
-        /// <param name="setUpWebDriver">The set up web driver.</param>
-        public PageBase(ISetUp setUpWebDriver)
+        public PageBase(ISetUp setUpAndroidDriver)
         {
-            this.webDriver = setUpWebDriver.LaunchDriver();
-
-            if (this.webDriver != null)
-            {
-                this.webDriverWait = new WebDriverWait(this.webDriver, TimeSpan.FromSeconds(15));
-            }
-        }
-
-        /// <summary>
-        /// Scrolls to element.
-        /// </summary>
-        /// <param name="element">The element.</param>
-        protected void ScrollToElement(IWebElement element)
-        {
-            var javascriptExecutor = (IJavaScriptExecutor)this.webDriver;
-            javascriptExecutor.ExecuteScript("arguments[0].scrollIntoView(true);", element);
+            this.androidDriver = (AndroidDriver<AndroidElement>)setUpAndroidDriver.LaunchDriver();
         }
 
         /// <summary>
@@ -56,8 +41,6 @@ namespace AC.SeleniumDriver
         /// </param>
         protected void ClickElement(IWebElement element)
         {
-            this.WaitUntilElementIsClickable(element);
-
             element.Click();
         }
 
@@ -72,8 +55,6 @@ namespace AC.SeleniumDriver
         /// </param>
         protected void SendKeysElement(IWebElement element, string keys)
         {
-            this.WaitUntilElementIsClickable(element);
-
             element.SendKeys(keys);
         }
 
@@ -85,8 +66,6 @@ namespace AC.SeleniumDriver
         /// </param>
         protected void ClearElement(IWebElement element)
         {
-            this.WaitUntilElementIsClickable(element);
-
             element.Clear();
         }
 
@@ -109,18 +88,6 @@ namespace AC.SeleniumDriver
             {
                 return false;
             }
-        }
-
-        /// <summary>
-        /// The wait until element.
-        /// </summary>
-        /// <param name="element">
-        /// The element.
-        /// </param>
-        private void WaitUntilElementIsClickable(IWebElement element)
-        {
-            this.webDriverWait = new WebDriverWait(this.webDriver, TimeSpan.FromSeconds(15));
-            this.webDriverWait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(element));
         }
     }
 }

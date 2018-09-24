@@ -11,7 +11,7 @@ using OpenQA.Selenium.Remote;
 
 namespace AC.SeleniumDriver
 {
-    public class SetUpDriver : ISetUp
+    public class SetUpWebDriver : ISetUp
     {
         private static IWebDriver webDriver;
 
@@ -35,12 +35,11 @@ namespace AC.SeleniumDriver
         /// Launches the web driver.
         /// </summary>
         /// <returns>The <see cref="IWebDriver"/></returns>
-        public IWebDriver LaunchWebDriver()
+        public IWebDriver LaunchDriver()
         {
             var webBrowserAppConfigValue = ConfigurationManager.AppSettings["WebBrowser"];
-            WebBrowser webBrowser;
 
-            if (Enum.TryParse(webBrowserAppConfigValue, out webBrowser))
+            if (Enum.TryParse(webBrowserAppConfigValue, out WebBrowser webBrowser))
             {
                 switch (webBrowser)
                 {
@@ -171,17 +170,13 @@ namespace AC.SeleniumDriver
 
                 return webDriver;
             }
-            catch (Exception ex)
+            catch
             {
                 this.CloseDriver();
                 throw;
             }
         }
 
-        /// <summary>
-        /// Creates the screen shot folder.
-        /// </summary>
-        /// <param name="path">The path.</param>
         private void CreateScreenshotFolder(string path)
         {
             if (!Directory.Exists(path))

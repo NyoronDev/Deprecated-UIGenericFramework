@@ -2,6 +2,7 @@
 using AC.Contracts.Pages;
 using DF.Entities;
 using FluentAssertions;
+using System.Configuration;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
 
@@ -31,18 +32,21 @@ namespace US.AcceptanceTests.Steps.Main
         [Given(@"The user goes to the main page")]
         public void TheUserGoesToTheMainPage()
         {
-            string url;
-            try
+            if (ConfigurationManager.AppSettings["Device"] == "Computer")
             {
-                url = this.WebSiteUrl;
-            }
-            catch
-            {
-                // We need to add the config.runsettings -> Visual Studio -> Test -> Test Settings -> Select Test Settings File
-                url = "https://todoauto.azurewebsites.net";
-            }
+                string url;
+                try
+                {
+                    url = this.WebSiteUrl;
+                }
+                catch
+                {
+                    // We need to add the config.runsettings -> Visual Studio -> Test -> Test Settings -> Select Test Settings File
+                    url = "https://todoauto.azurewebsites.net";
+                }
 
-            this.setUpDriver.GoToUrl(url);
+                this.setUpDriver.GoToUrl(url);
+            }
         }
 
         [Given(@"The user goes to create new item")]
@@ -58,7 +62,14 @@ namespace US.AcceptanceTests.Steps.Main
             var expectedItems = table.CreateSet<TodoItem>();
             var realItems = this.mainPage.GetTodoItems();
 
-            realItems.Should().BeEquivalentTo(expectedItems, options => options.WithStrictOrdering());
+            if (ConfigurationManager.AppSettings["Device"] == "Computer")
+            {
+                realItems.Should().BeEquivalentTo(expectedItems, options => options.WithStrictOrdering());
+            }
+            else
+            {
+                realItems.Should().BeEquivalentTo(expectedItems, options => options.Excluding(x => x.Color).Excluding(y => y.Content));
+            }
         }
 
         /// <summary>

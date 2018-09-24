@@ -19,7 +19,7 @@ namespace US.AcceptanceTests
         [ScenarioDependencies]
         public static IUnityContainer CreateContainer()
         {
-            AppContainer.BuildWebContainer();
+            AppContainer.BuildContainer();
             var container = AppContainer.Container;
 
             // Registers the build steps, this gives us dependency resolution using the container.
