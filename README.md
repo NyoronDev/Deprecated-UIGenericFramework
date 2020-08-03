@@ -1,4 +1,4 @@
-# Selenium Generic Framework
+# UI Generic Framework
 This framework provides the opportunity to help the people to start a new UI automation project with all the architecture needed to generate tests on multiple platforms (Web, Mobile) using Selenium and Appium. 
 
 The idea of this project is to separate the different layers so that they can be used independently (regardless of the tools that you use to generate the tests and automate the project), maintaining the scalability of the test solution.
