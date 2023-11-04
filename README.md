@@ -1,3 +1,5 @@
+** Deprecated, please reach the following repository for a better approach: https://github.com/NyoronDev/QAGenericFramework
+
 # UI Generic Framework
 This framework provides the opportunity to help the people to start a new UI automation project with all the architecture needed to generate tests on multiple platforms (Web, Mobile) using Selenium and Appium. 
 
